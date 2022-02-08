@@ -1,0 +1,36 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo App using Expressjs and Angularjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./app/index.js",
+    "migration": "export APPDIR=$PWD && node ./migrate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlenteria/Todo-App-AngularJS.git"
+  },
+  "author": "Jonel Lenteria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlenteria/Todo-App-AngularJS/issues"
+  },
+  "homepage": "https://github.com/jlenteria/Todo-App-AngularJS#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "child_process": "^1.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "fs": "^0.0.1-security",
+    "ini": "^2.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "pg": "^8.7.1",
+    "sequelize": "^6.15.0",
+    "util": "^0.12.4"
+  }
+}

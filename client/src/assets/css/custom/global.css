@@ -1,0 +1,9 @@
+.loginForm, .registerForm, .todosDiv{
+	width: 40%;
+	margin: 100px auto 0px;
+	background: white;
+	border: 1px solid rgba(0,0,0,0.2);
+	padding: 30px;
+	border-radius: 10px;
+	position: ab;
+}

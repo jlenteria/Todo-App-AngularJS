@@ -1,0 +1,1 @@
+{"development":{"dialect":"postgres","database":"angularTodos","username":"bling_bling","password":"bling_bling"},"production":{"dialect":"postgres","database":"angularTodos","username":"bling_bling","password":"bling_bling"}}
