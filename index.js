@@ -5,7 +5,8 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const path = require('path')
-const todoRoutes = require('./app/router/todo-router.js')
+const routes = require('./app/router/todo-router.js')
+
 const boot = require('./app/boot')
 
 const app = express();
@@ -17,8 +18,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/client/src'))
-app.use('/api',todoRoutes)
-
+app.use('/api',routes)
 
 app.get("*", (req,res) => {
 	res.sendFile(path.join(__dirname + '/client/src/index.html'))

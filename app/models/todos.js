@@ -10,10 +10,14 @@ const opts = {
 module.exports = (sequelize, Sequelize) => {
 	const model = sequelize.define(model_name, {
 		id: {
+			primaryKey: true,
 			type: Sequelize.UUID,
 			defaultValue: Sequelize.UUIDV4,
 			unique: true,
 			allowNull: false
+		},
+		user_id: {
+			type: Sequelize.STRING
 		},
 		title: {
 			type: Sequelize.STRING

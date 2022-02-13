@@ -4,10 +4,14 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     return await queryInterface.createTable('todos_table',{
       id: {
+        primaryKey: true,
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         unique: true,
         allowNull: false
+      },
+      user_id: {
+        type: Sequelize.STRING
       },
       title: {
         type: Sequelize.STRING

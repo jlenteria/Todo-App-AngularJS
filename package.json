@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./app/index.js",
+    "start": "export APPDIR=$PWD && nodemon ./app/index.js",
     "migration": "export APPDIR=$PWD && node ./migrate.js"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "body-parser": "^1.19.1",
     "child_process": "^1.0.2",
     "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "fs": "^0.0.1-security",

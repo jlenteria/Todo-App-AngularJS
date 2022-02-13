@@ -46,7 +46,7 @@ exports.verify = () => {
 	const auth_loop = () => {
 		return exports.init().then(db => {
 			return db.authenticate()
-				.then(res => {
+				.then(() => {
 					console.log('db:connected')
 				})
 				.catch(e => {
