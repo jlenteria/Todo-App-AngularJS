@@ -13,7 +13,14 @@ exports.register = async(params) => {
 }
 
 exports.login = async(params) => {
-  return await exports.checkUser(params)
+  const {models} = await db.getInstance()
+  const new_username = params.username.trim().toLowerCase()
+  const user = await models.UsersModel.findOne({where: {username: new_username}})
+  if(!user) throw new Error ("Username is not yet registered.")
+  const decrypt_password = encryptor.decrypt(user.password, enc_key)
+  if(decrypt_password !== params.password.trim()) throw new Error("Password is invalid.")
+  
+  return user
 }
 
 exports.validateUsername = async (username) => {
@@ -31,14 +38,4 @@ exports.validatePassword = (password) => {
 
 exports.encryptPassword = (plain) => {
   return encryptor.encrypt(plain, enc_key)
-}
-
-exports.checkUser = async(params) => {
-  const {models} = await db.getInstance()
-  const new_username = params.username.trim().toLowerCase()
-  const user = await models.UsersModel.findOne({where: {username: new_username}})
-  if(!user) throw new Error ("Username is not yet registered.")
-  const decrypt_password = encryptor.decrypt(user.password, enc_key)
-  if(decrypt_password !== params.password.trim()) throw new Error("Password is invalid.")
-  return user
 }
