@@ -1,11 +1,11 @@
 # Todo-App-AngularJS
 This project is made of AngularJS and ExpressJS with PostgreSQL database.
 
-== SETUP .env file ==
+====== SETUP .env file ====== '\n'
 PORT=3000
 SECRET_KEY=angularJStodos
 
-== SETUP Default database.ini == 
+===== SETUP Default database.ini ====== '\n'
 dialect=postgres
 database=angularTodos
 username=bling_bling
