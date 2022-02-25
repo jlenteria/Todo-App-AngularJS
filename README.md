@@ -1,20 +1,26 @@
 # Todo-App-AngularJS
 This project is made of AngularJS and ExpressJS with PostgreSQL database.
 
-====== SETUP .env file ====== '\n'
+# SETUP ENV
+```
 PORT=3000
 SECRET_KEY=angularJStodos
+```
 
-===== SETUP Default database.ini ====== '\n'
+# SETUP Default database
+```
 dialect=postgres
 database=angularTodos
 username=bling_bling
 password=bling_bling
 host=localhost
+```
 
-To Run: 
+## To Run: 
+```
 1. npm install
 2. npm run migration
 3. npm run start
+```
 
 you're good to go to: localhost:3000
