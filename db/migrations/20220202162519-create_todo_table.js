@@ -1,14 +1,12 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    return await queryInterface.createTable('todos_table',{
+  async up(queryInterface, Sequelize) {
+    return await queryInterface.createTable('todos_table', {
       id: {
         primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
-        unique: true,
-        allowNull: false
+        type: Sequelize.INTEGER,
+        autoIncrement: true
       },
       user_id: {
         type: Sequelize.STRING
@@ -28,7 +26,7 @@ module.exports = {
     })
   },
 
-  async down (queryInterface, Sequelize) {
-   return queryInterface.dropTable('todos_table')
+  async down(queryInterface, Sequelize) {
+    return queryInterface.dropTable('todos_table')
   }
 };

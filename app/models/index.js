@@ -9,9 +9,9 @@ const model_files = {
 
 let db_instance
 
-exports.init = async() => {
+exports.init = async () => {
   return sequelize.getInstance().then(async (db) => {
-    const {Sequelize} = sequelize
+    const { Sequelize } = sequelize
 
     const models = {}
     Object.keys(model_files).forEach(k => {
@@ -19,15 +19,14 @@ exports.init = async() => {
     })
 
     models.UsersModel.hasMany(models.TodosModel)
-    models.TodosModel.belongsTo(models.UsersModel)
 
-   db_instance = {Sequelize, sequelize, models}
-   return db_instance
+    db_instance = { Sequelize, sequelize, models }
+    return db_instance
 
-  }) 
+  })
 }
 
 exports.getInstance = () => {
-  if(db_instance){return Promise.resolve(db_instance)}
-  else {return exports.init()}
+  if (db_instance) { return Promise.resolve(db_instance) }
+  else { return exports.init() }
 }

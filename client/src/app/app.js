@@ -1,1 +1,2 @@
-angular.module('todoApp',['appRoutes'])
+angular
+  .module('todoApp', ['appRoutes','authServices', 'userServices', 'todoServices'])

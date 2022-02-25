@@ -11,10 +11,8 @@ module.exports = (sequelize, Sequelize) => {
 	const model = sequelize.define(model_name, {
 		id: {
 			primaryKey: true,
-			type: Sequelize.UUID,
-			defaultValue: Sequelize.UUIDV4,
-			unique: true,
-			allowNull: false
+			type: Sequelize.INTEGER,
+			autoIncrement: true
 		},
 		user_id: {
 			type: Sequelize.STRING

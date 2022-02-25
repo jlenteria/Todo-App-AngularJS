@@ -1,5 +1,35 @@
 <div class="todosDiv">
 	<h1 class="text-center">ToDos</h1>
-	<hr>
+	<div>
+		<form ng-submit="submit()">
+			<div class="form-group">
+				<button type="button" class="btn btn-success" ng-if="!opts.enable && opts.btn === 'add'" ng-click="addBtn()">Add</button>
+				<input type="text" name="title" class="form-control" required ng-model="title" ng-show="opts.enable">
+			</div>
+			<button type="submit" class="btn btn-primary mt-2" ng-if="opts.enable">
+				{{opts.btn === 'add' ? 'Add' : 'Update'}}
+			</button>
+		</form>
+	</div>
+		<hr>
+
+	<div class="all-todos mt-5">
+		<span ng-if="todos.length === 0"> No todos yet, please add.</span>
+		<ul class="list-unstyled" ng-repeat="(key,t) in todos">
+			<li >
+				<div style="display: flex; justify-content: space-between;">
+					<span>{{key + 1}}. {{t.title}}</span>
+					<div>
+						<input type="checkbox" value="1" ng-model="t.is_done" ng-click="finish({is_done: !t.is_done, id: t.id})">
+						<span class="btn btn-primary btn-sm" ng-click="updateBtn(t)">Update</span>
+						<span class="btn btn-danger btn-sm" ng-click="delete(t.id)">Delete</span>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<button class="btn btn-danger mt-5" style="float: right;" ng-click="logout()">Logout</button>
+
+	</div>
 
 </div>

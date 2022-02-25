@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css">
 	<link type="text/css" rel="stylesheet" href="assets/css/custom/global.css">
+
 	<base href="/">
 	<script src="assets/js/angular.js"></script>
 	<script src="assets/js/angular-route.js"></script>
@@ -14,11 +16,18 @@
 	<script src="app/components/login-form/login-form.js"></script>
 	<script src="app/components/register-form/register-form.js"></script>
 	<script src="app/components/todos/todos.js"></script>
+	<script src="app/services/authProvider.js"></script>
+	<script src="app/services/Users.js"></script>
+	<script src="app/services/Todos.js"></script>
+
+
 </head>
+
 <body>
 	<div ng-app="todoApp">
 		<ng-view></ng-view>
 	</div>
 	<script src="assets/js/bootstrap.js"></script>
 </body>
+
 </html>
