@@ -1,18 +1,19 @@
 # Todo-App-AngularJS
-This project is made of AngularJS and ExpressJS with PostgreSQL database.
+This project is made of AngularJS and ExpressJS with PostgreSQL database and Sequelize.
 
-# SETUP ENV
+## Setup ENV
 ```
 PORT=3000
 SECRET_KEY=angularJStodos
 ```
 
-# SETUP Default database
+## Setup Default database
 ```
+1. Go to config/defaults and create database.ini then setup this:
 dialect=postgres
-database=angularTodos
-username=bling_bling
-password=bling_bling
+database=your_database
+username=your_username
+password=your_password
 host=localhost
 ```
 
