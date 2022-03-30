@@ -1,4 +1,4 @@
 node_modules/*
 yarn-error.log
-/config/defaults/database.ini
+database.ini
 .env
