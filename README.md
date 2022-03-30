@@ -9,7 +9,7 @@ SECRET_KEY=angularJStodos
 
 ## Setup Default database
 ```
-1. Go to config/defaults and create database.ini then setup this:
+1. Go to config/defaults/database.ini then change the value of yours:
 dialect=postgres
 database=your_database
 username=your_username
